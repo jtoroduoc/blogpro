@@ -1,1 +1,2 @@
-# blogpro
+# BlogPro
+Aplicación para administrar noticias.
