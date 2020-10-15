@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # 'blog.apps.NewsConfig', <-- Agregar aplicación a la solución, idem linea siguiente.
+    'news',
 ]
 
 MIDDLEWARE = [
@@ -107,7 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'es-cl' # Lenguaje: en-us 
+LANGUAGE_CODE = 'es-cl'  # Lenguaje: en-us
 
 TIME_ZONE = 'America/Santiago'
 
