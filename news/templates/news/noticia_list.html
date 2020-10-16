@@ -7,5 +7,12 @@
 </head>
 <body>
     <h1>Noticias</h1>
+    
+    {% for noticia in noticias %}
+    <div>
+        <p>publicado: {{ noticia.creacion }}</p>
+        <h2><a href="#">{{ noticia.titulo }}</a></h2>
+    </div>
+    {% endfor %}
 </body>
 </html>
