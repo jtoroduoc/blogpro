@@ -41,3 +41,9 @@ def noticia_edit(request, pk):
     else:
         form = NoticiaForm(instance=noticia)
     return render(request, 'news/noticia_edit.html', {'form': form})
+
+def noticia_delete(request, pk):
+    noticia = get_object_or_404(Noticia, pk=pk)
+    noticia.delete()
+    noticias = Noticia.objects.filter(publicacion__lte=timezone.now()).order_by('-publicacion')
+    return render(request, 'news/noticia_list.html', {'noticias': noticias})
