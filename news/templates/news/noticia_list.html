@@ -1,18 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BlogPro : Noticias</title>
-</head>
-<body>
-    <h1>Noticias</h1>
-    
+{% extends 'news/base.html' %}
+
+{% block content %}
     {% for noticia in noticias %}
-    <div>
+    <div class="post">
         <p>publicado: {{ noticia.creacion }}</p>
         <h2><a href="#">{{ noticia.titulo }}</a></h2>
+        <p>{{ noticia.contenido|linebreaksbr }}</p>
     </div>
     {% endfor %}
-</body>
-</html>
+{% endblock %}
