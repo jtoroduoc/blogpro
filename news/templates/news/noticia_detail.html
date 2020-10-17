@@ -8,7 +8,10 @@
                 publicado: {{ noticia.publicacion }}
             </div>
         {% endif %}
-        <h2><a href="{% url 'noticia_detail' pk=noticia.pk  %}">{{ noticia.titulo }}</a></h2>
+        {% if user.is_authenticated %}
+            <a class="btn btn-default" href="{% url 'noticia_edit' pk=noticia.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        {% endif %}
+        <h2>{{ noticia.titulo }}</h2>
         <p>{{ noticia.contenido|linebreaksbr }}</p>
     </div>
    
