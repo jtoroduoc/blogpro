@@ -1,13 +1,15 @@
 {% extends 'news/base.html' %}
 
 {% block content %}
-    {% for noticia in noticias %}
+   
     <div class="post">
-        <div class="date">
-            publicado: {{ noticia.publicacion }}
-        </div>
+        {% if noticia.publicacion %}
+            <div class="date">
+                publicado: {{ noticia.publicacion }}
+            </div>
+        {% endif %}
         <h2><a href="{% url 'noticia_detail' pk=noticia.pk  %}">{{ noticia.titulo }}</a></h2>
         <p>{{ noticia.contenido|linebreaksbr }}</p>
     </div>
-    {% endfor %}
+   
 {% endblock %}
